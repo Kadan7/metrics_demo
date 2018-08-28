@@ -5,4 +5,4 @@ RUN rm -rf /var/lib/apt/lists/*
 COPY metrics1.jar /test/metrics1.jar
 COPY startup.sh /usr/local/startup.sh
 EXPOSE 8080
-CMD["sh","/usr/local/startup.sh"]
+#CMD["sh","/usr/local/startup.sh"]
