@@ -1,1 +1,1 @@
-java -jar /test/metrics1.jar
+java -jar /usr/local/metrics1.jar
