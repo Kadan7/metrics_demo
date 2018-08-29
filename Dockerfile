@@ -11,7 +11,9 @@ MAINTAINER shali.malli@gmail.com
 #CMD java -jar /data/metrics1-0.0.1-SNAPSHOT.jar
 
 #copy hello world to docker image
-COPY metrics1.jar /usr/local/metrics1.jar
-COPY startup.sh /usr/local/startup.sh
+COPY metrics1.jar /data/metrics1.jar
+COPY AppServerAgent-4 /data/AppServerAgent-4/
+#CMD unzip -d /data/appagent /data/AppServerAgent-4.4.3.23530.zip
 EXPOSE 8080
-CMD ["sh","/usr/local/startup.sh"]
+#CMD ["sh","/usr/local/startup.sh"]
+CMD java -javaagent:/data/AppServerAgent-4/javaagent.jar -jar /data/metrics1.jar -Dappdynamics.agent.tierName=middle -Dappdynamics.agent.nodeName=metricsnode
